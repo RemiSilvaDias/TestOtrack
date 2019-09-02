@@ -1,0 +1,31 @@
+// CSS variables
+
+// FONTS
+$font-family: 'Roboto',
+'Helvetica Neue',
+'Open Sans',
+sans-serif;
+
+$font-size: 0.8em;
+
+// COLORS
+
+$mainColor: rgb(209, 18, 28);
+
+$mainColor-t25: transparentize($mainColor, 0.25);
+$mainColor-t50: transparentize($mainColor, 0.5);
+$mainColor-t75: transparentize($mainColor, 0.75);
+
+// White
+$white: #ffffff;
+$white-t25: transparentize($white, 0.25);
+$white-t50: transparentize($white, 0.5);
+$white-t75: transparentize($white, 0.75);
+
+// Black
+$black: #000000;
+$black-t25: transparentize($black, 0.25);
+$black-t50: transparentize($black, 0.5);
+$black-t75: transparentize($black, 0.75);
+
+$transparent: #ffffff00;
