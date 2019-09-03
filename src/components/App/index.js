@@ -8,8 +8,6 @@ import TabsTest from 'src/components/Tabs';
 import NavBarSearch from 'src/components/NavBarSearch';
 import Collapse from 'src/components/Collapse';
 import Collapse2 from 'src/components/Collapse2';
-import IconButtons from 'src/components/IconButtons';
-import Checkbox from 'src/components/Checkbox';
 
 
 // == Composant
@@ -19,8 +17,6 @@ const App = () => (
     <TabsTest />
     <Collapse />
     <Collapse2 />
-    <IconButtons />
-    <Checkbox />
   </div>
 );
 
