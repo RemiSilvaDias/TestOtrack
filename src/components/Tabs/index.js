@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -41,14 +41,6 @@ function a11yProps(index) {
   };
 }
 
-const theme = () => ({
-  palette: {
-    primary: '#000',
-    secondary: {
-      main: '#EEE',
-    },
-  },
-});
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -58,8 +50,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function TabsTest() {
-  const classes = theme();
+  const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
   function handleChange(event, newValue) {
@@ -69,7 +62,7 @@ export default function TabsTest() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+        <Tabs centered value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Item One" {...a11yProps(0)} />
           <Tab label="Item Two" {...a11yProps(1)} />
           <Tab label="Item Three" {...a11yProps(2)} />
