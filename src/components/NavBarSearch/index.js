@@ -99,7 +99,6 @@ export default function NavBarSearch() {
       <ThemeProvider theme={muiTheme}>
         <AppBar position="static">
           <Toolbar className={classes.toolbar}>
-            {console.log(Toolbar)}
             <Grid container className={classes.root} spacing={2} justify="center">
               <Grid item xs={3}>
                 <Avatar className={classes.avatar}>

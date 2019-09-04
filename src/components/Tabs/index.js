@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -6,25 +7,20 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-
-import purple from '@material-ui/core/colors/purple';
 
 import Drawer from 'src/components/Drawer';
 
-
-import IconButtons from 'src/components/IconButtons';
 import './Tabs.scss';
+import Cards from './Cards';
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const {
+    children,
+    value,
+    index,
+    ...other
+  } = props;
 
   return (
     <Typography
@@ -44,6 +40,10 @@ TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.any.isRequired,
   value: PropTypes.any.isRequired,
+};
+
+TabPanel.defaultProps = {
+  children: () => { },
 };
 
 function a11yProps(index) {
@@ -87,6 +87,7 @@ export default function TabsTest() {
 
   return (
     <div className={classes.root}>
+
       <AppBar position="static">
         <Tabs centered value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="En cours" {...a11yProps(0)} />
@@ -95,250 +96,33 @@ export default function TabsTest() {
           <Tab label="Abandonné" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
+
       <Drawer />
+
       <TabPanel value={value} index={0}>
         <Grid container className={classes.root} spacing={2} justify="center">
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="src/styles/assets/images/pict-card.jpg"
-                title="Kimetsu no yabai"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Titre à la con
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  texte a la con
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions className={classes.Button}>
-
-              <IconButtons />
-            </CardActions>
-          </Card>
-          {/* -------------------- */}
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="src/styles/assets/images/pict-card.jpg"
-                title="Kimetsu no yabai"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Titre à la con
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  texte a la con
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions className={classes.Button}>
-
-              <IconButtons />
-
-            </CardActions>
-          </Card>
-          {/* -------------------- */}
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="src/styles/assets/images/pict-card.jpg"
-                title="Kimetsu no yabai"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Titre à la con
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  texte a la con
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions className={classes.Button}>
-
-              <IconButtons />
-
-            </CardActions>
-          </Card>
-          {/* -------------------- */}
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="src/styles/assets/images/pict-card.jpg"
-                title="Kimetsu no yabai"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Titre à la con
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  texte a la con
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions className={classes.Button}>
-
-              <IconButtons />
-
-            </CardActions>
-          </Card>
-          {/* -------------------- */}
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="src/styles/assets/images/pict-card.jpg"
-                title="Kimetsu no yabai"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Titre à la con
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  texte a la con
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions className={classes.Button}>
-
-              <IconButtons />
-
-            </CardActions>
-          </Card>
-          {/* -------------------- */}
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="src/styles/assets/images/pict-card.jpg"
-                title="Kimetsu no yabai"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Titre à la con
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  texte a la con
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions className={classes.Button}>
-
-              <IconButtons />
-
-            </CardActions>
-          </Card>
-          {/* -------------------- */}
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="src/styles/assets/images/pict-card.jpg"
-                title="Kimetsu no yabai"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Titre à la con
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  texte a la con
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions className={classes.Button}>
-
-              <IconButtons />
-
-            </CardActions>
-          </Card>
-          {/* -------------------- */}
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="src/styles/assets/images/pict-card.jpg"
-                title="Kimetsu no yabai"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Titre à la con
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  texte a la con
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions className={classes.Button}>
-
-              <IconButtons />
-
-            </CardActions>
-          </Card>
-          {/* -------------------- */}
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="src/styles/assets/images/pict-card.jpg"
-                title="Kimetsu no yabai"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Titre à la con
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  texte a la con
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions className={classes.Button}>
-
-              <IconButtons />
-
-            </CardActions>
-          </Card>
-          {/* -------------------- */}
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="src/styles/assets/images/pict-card.jpg"
-                title="Kimetsu no yabai"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Titre à la con
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  texte a la con
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions className={classes.Button}>
-
-              <IconButtons />
-
-            </CardActions>
-          </Card>
-          {/* -------------------- */}
-          
-      </Grid>
+          <Cards />
+        </Grid>
       </TabPanel>
+
       <TabPanel value={value} index={1}>
-        Item Two
+        <Grid container className={classes.root} spacing={2} justify="center">
+          <Cards />
+        </Grid>
       </TabPanel>
+
       <TabPanel value={value} index={2}>
-        Item Three
+        <Grid container className={classes.root} spacing={2} justify="center">
+          <Cards />
+        </Grid>
       </TabPanel>
+
       <TabPanel value={value} index={3}>
-        Item Four
+        <Grid container className={classes.root} spacing={2} justify="center">
+          <Cards />
+        </Grid>
       </TabPanel>
+
     </div>
   );
 }

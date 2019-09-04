@@ -162,7 +162,7 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          {['Titre', 'Date de sortie', 'Popularité', 'Favoris'].map((text, index) => (
+          {['Titre', 'Date de sortie', 'Popularité', 'Favoris'].map((text) => (
             <ListItem button key={text}>
               <ListItemText primary={text} />
             </ListItem>
@@ -187,7 +187,7 @@ export default function PersistentDrawerLeft() {
               }}
             >
               <MenuItem value="">
-                <em></em>
+                <em>TESTESTTETSTETST</em>
               </MenuItem>
               <MenuItem value={10}>Shonen</MenuItem>
               <MenuItem value={20}>Seinen</MenuItem>
