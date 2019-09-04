@@ -33,6 +33,17 @@ const useStyles = makeStyles((theme) => ({
   Span: {
     borderBottom: '10px solid white',
   },
+  p: {
+    textAlign: 'center',
+    padding: 3,
+    fontStyle: 'italic',
+  },
+  IconButtons: {
+    alignItem: 'flex-end',
+  },
+  description: {
+    height: 150,
+  },
 }));
 
 const shuffleArray = (array) => {
@@ -54,7 +65,8 @@ export default function Tab() {
   return (
     <>
       {shuffleArray(shows).map((show) => (
-        <Card className={classes.card}>
+        <Card key={show.title} className={classes.card}>
+          <p className={classes.p}>{show.release}</p>
           <CardActionArea>
             <CardMedia
               className={classes.media}
@@ -65,14 +77,14 @@ export default function Tab() {
               <Typography gutterBottom variant="h5" component="h2">
                 {show.title}
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
+              <Typography variant="body2" color="textSecondary" component="p" className={classes.description}>
                 {show.description}
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions className={classes.Button}>
 
-            <IconButtons />
+            <IconButtons className={classes.IconButtons} />
 
           </CardActions>
         </Card>
